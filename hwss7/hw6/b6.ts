@@ -1,33 +1,19 @@
-class Student {
-    id: number;
-    name: string;
-    class: string;
+// Mảng kiểu số nguyên
+let myArray1: number[] = [1, 2, 3, 4, 5];
 
-    constructor(id: number, name: string, className: string) {
-        this.id = id;
-        this.name = name;
-        this.class = className;
-    }
-}
+// Tuple gồm một số nguyên và một chuỗi
+let myTuple1: [number, string] = [10, "Hello"];
 
-function filterStudentsByClass(students: Student[], targetClass: string): Student[] {
-    return students.filter(student => student.class === targetClass);
-}
+// Truy cập và thay đổi phần tử trong mảng
+console.log(myArray1[0]);  // Output: 1
+myArray1[1] = 10;
+console.log(myArray1);  // Output: [1, 10, 3, 4, 5]
 
-// Khởi tạo mảng chứa các đối tượng sinh viên
-const students: Student[] = [
-    new Student(1, "minh", "A"),
-    new Student(2, "phuc", "B"),
-    new Student(3, "nam", "A"),
-    new Student(4, "son", "C"),
-    new Student(5, "luong", "B")
-];
+// Truy cập và thay đổi phần tử trong tuple
+console.log(myTuple1[0]);  // Output: 10
+console.log(myTuple1[1]);  // Output: Hello
+// Không thể thay đổi kích thước hoặc các phần tử trong tuple
+// myTuple.push(4);  // Error
 
-// Gọi hàm để lọc sinh viên theo lớp
-const targetClass: string = "C";
-const studentsInTargetClass: Student[] = filterStudentsByClass(students, targetClass);
-
-// In ra các sinh viên trong lớp cần tìm
-studentsInTargetClass.forEach(student => {
-    console.log(`ID: ${student.id}, Name: ${student.name}, Class: ${student.class}`);
-});
+// như vậy ta thấy mảng thì có thể thay đổi kích thước và các phần tử trong mảng
+// còn về tuple thì không thể thay đổi kích thước và giá tị các phần tử trong mảng sau khi đã được tạo ra
